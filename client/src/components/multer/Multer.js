@@ -79,9 +79,9 @@ const Multer = () => {
           <input type="submit" />
         </form>
       </div>
-      <div className="posts_continer">
+      {/* <div className="posts_continer">
         <PostsFromMulter posts={posts} />
-      </div>
+      </div> */}
     </div>
   );
 };
