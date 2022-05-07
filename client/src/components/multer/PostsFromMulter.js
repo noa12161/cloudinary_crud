@@ -1,4 +1,5 @@
 const Post = ({ post }) => {
+  console.log(post);
   return (
     <div className="post_container">
       <div className="post_username">{post.name}</div>
@@ -14,7 +15,13 @@ const Post = ({ post }) => {
 };
 
 const PostsFromMulter = ({ posts }) => {
-  return posts.map((post, i) => <Post post={post} key={i} />);
+  return (
+    <>
+      {posts.map((post, i) => (
+        <Post post={post} key={i} />
+      ))}
+    </>
+  );
 };
 
 export default PostsFromMulter;

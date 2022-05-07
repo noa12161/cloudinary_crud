@@ -40,6 +40,7 @@ const Multer = () => {
   useEffect(() => {
     const getPosts = async () => {
       try {
+        console.log("fetching posts...");
         const res = await axios.get("/users");
         setPosts(res.data);
       } catch (e) {
