@@ -14,7 +14,7 @@ const Post = ({ post }) => {
 };
 
 const PostsFromMulter = ({ posts }) => {
-  return posts.map((post) => <Post post={post} />);
+  return posts.map((post, i) => <Post post={post} key={i} />);
 };
 
 export default PostsFromMulter;
