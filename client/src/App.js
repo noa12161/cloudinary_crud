@@ -4,7 +4,8 @@ import Multer from "./components/multer/Multer.js";
 function App() {
   return (
     <div className="App">
-      <Multer />
+      App!!
+      {/* <Multer /> */}
       {/* <ToBase64 />
       <Posts /> */}
     </div>
