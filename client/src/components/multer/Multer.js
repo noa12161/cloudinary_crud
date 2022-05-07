@@ -41,7 +41,6 @@ const Multer = () => {
     const getPosts = async () => {
       try {
         const res = await axios.get("/users");
-        console.log(res.data);
         setPosts(res.data);
       } catch (e) {
         console.log(e);
@@ -50,9 +49,6 @@ const Multer = () => {
     getPosts();
   }, []);
 
-  useEffect(() => {
-    console.log(newUser);
-  }, [newUser]);
   return (
     <div>
       <div className="form_container">
@@ -80,7 +76,8 @@ const Multer = () => {
         </form>
       </div>
       <div className="posts_continer">
-        <PostsFromMulter posts={posts} />
+        PostsFromMulter
+        {posts && <PostsFromMulter posts={posts} />}
       </div>
     </div>
   );
