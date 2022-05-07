@@ -9,6 +9,7 @@ const mongoose = require("mongoose");
 const app = express();
 require("dotenv").config();
 
+console.log("hi");
 const PORT = process.env.PORT || 5000;
 console.log(PORT);
 
