@@ -9,7 +9,9 @@ const postRouter = require("./routes/post");
 const app = express();
 require("dotenv").config();
 
-const port = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5000;
+console.log(PORT);
+
 // default limit is 100kb
 // filebase64로 이미지 전송시 크기가 크므로 limit 확장...
 app.use(bodyparser.json({ limit: "30mb", extended: true }));
@@ -25,10 +27,9 @@ app.use("/users", userRouter);
 app.use("/posts", postRouter);
 
 app.use(express.static(path.join(__dirname, "client/build")));
+// console.log(path.join(__dirname, "client/build"));
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client/build", "index.html"));
 });
 
-app.listen(process.env.PORT || 5000, () => {
-  console.log(`listening at port${port}`);
-});
+app.listen(PORT, () => console.log(`running server on ${PORT}`));

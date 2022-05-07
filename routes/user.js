@@ -4,7 +4,6 @@ const multer = require("multer");
 const path = require("path");
 const User = require("../models/users");
 
-console.log(path.dirname(__dirname));
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     console.log("from multer req.body");
