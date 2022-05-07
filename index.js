@@ -24,7 +24,7 @@ mongoose.connect(uri).then(console.log("connected to DB"));
 
 app.use("/images", express.static(path.join(__dirname, "images")));
 
-app.use("/users", userRouter);
+app.use("/api/users", userRouter);
 app.use("/posts", postRouter);
 
 app.use(express.static(path.join(__dirname, "client/build")));

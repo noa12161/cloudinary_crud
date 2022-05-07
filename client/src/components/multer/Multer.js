@@ -21,7 +21,7 @@ const Multer = () => {
     formData.append("name", newUser.name);
 
     axios
-      .post("/users/add", formData)
+      .post("/api/users/add", formData)
       .then((res) => console.log(res))
       .catch((e) => console.log(e));
   };
@@ -41,7 +41,7 @@ const Multer = () => {
     const getPosts = async () => {
       try {
         console.log("fetching posts...");
-        const res = await axios.get("/users");
+        const res = await axios.get("/api/users");
         setPosts(res.data);
       } catch (e) {
         console.log(e);
