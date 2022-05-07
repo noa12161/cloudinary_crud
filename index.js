@@ -3,8 +3,8 @@ const cors = require("cors");
 const path = require("path");
 const bodyparser = require("body-parser");
 const mongoose = require("mongoose");
-const userRouter = require("./routes/user");
-const postRouter = require("./routes/post");
+// const userRouter = require("./routes/user");
+// const postRouter = require("./routes/post");
 
 const app = express();
 require("dotenv").config();
@@ -21,10 +21,10 @@ app.unsubscribe(express.json());
 const uri = process.env.ATLAS_URI;
 mongoose.connect(uri).then(console.log("connected to DB"));
 
-app.use("/images", express.static(path.join(__dirname, "images")));
+// app.use("/images", express.static(path.join(__dirname, "images")));
 
-app.use("/users", userRouter);
-app.use("/posts", postRouter);
+// app.use("/users", userRouter);
+// app.use("/posts", postRouter);
 
 app.use(express.static(path.join(__dirname, "client/build")));
 // console.log(path.join(__dirname, "client/build"));
