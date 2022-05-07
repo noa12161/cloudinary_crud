@@ -5,9 +5,7 @@ function App() {
   return (
     <div className="App">
       App!!
-      {/* <Multer /> */}
-      {/* <ToBase64 />
-      <Posts /> */}
+      <Multer />
     </div>
   );
 }
