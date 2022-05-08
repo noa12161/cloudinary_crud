@@ -1,11 +1,11 @@
 import "./App.css";
-import Multer from "./components/multer/Multer.js";
+import Cloudinary2 from "./components/cloudinary2/Cloudinary2";
 
 function App() {
   return (
     <div className="App">
       App!!
-      <Multer />
+      <Cloudinary2 />
     </div>
   );
 }

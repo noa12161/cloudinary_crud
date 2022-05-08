@@ -1,0 +1,2 @@
+claudinary my uri =
+  https://api.cloudinary.com/v1_1/dcnef2k8v/image/upload",

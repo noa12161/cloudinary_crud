@@ -3,13 +3,12 @@ const cors = require("cors");
 const path = require("path");
 const bodyparser = require("body-parser");
 const mongoose = require("mongoose");
-const userRouter = require("./routes/user");
-const postRouter = require("./routes/post");
+const claudinaryRouter = require("./routes/claudinary");
+const claudinaryRouter2 = require("./routes/claudinary2");
 
 const app = express();
 require("dotenv").config();
 
-console.log("hi");
 const PORT = process.env.PORT || 5000;
 console.log(PORT);
 
@@ -22,10 +21,10 @@ app.unsubscribe(express.json());
 const uri = process.env.ATLAS_URI;
 mongoose.connect(uri).then(console.log("connected to DB"));
 
-app.use("/images", express.static(path.join(__dirname, "images")));
-
-app.use("/api/users", userRouter);
-app.use("/posts", postRouter);
+// https://namanrivaan.medium.com/how-to-upload-an-image-with-mern-stack-a6c02e0a26b7
+app.use("/api/claudinary", claudinaryRouter);
+// https://dev.to/itsmefarhan/cloudinary-files-images-crud-operations-with-nodejs-express-multer-2147
+app.use("/api/claudinary2", claudinaryRouter2);
 
 app.use(express.static(path.join(__dirname, "client/build")));
 app.get("*", (req, res) => {
